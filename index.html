@@ -32,7 +32,11 @@
 </head>
 
 <body>
-   
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
 
 
     <!-- Topbar Start -->
@@ -59,24 +63,49 @@
 
     <!-- Navbar & Carousel Start -->
     <style>
-        /* CSS for responsive carousel images */
-        #header-carousel .carousel-item img {
-            height: 100vh; /* Set height to 70% of the viewport height */
-            width: 100%; /* Full width to span the carousel */
-            object-fit: cover; /* Ensures images maintain their aspect ratio and fill the space */
+        /* CSS for carousel-like section with black background and white logo */
+        #header-carousel .carousel-item {
+            height: 100vh; /* Set height to 100% of the viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000; /* Black background */
         }
     
-        /* Additional styles for smaller devices */
+        /* Style for the white "Welcome" logo text */
+        .carousel-logo {
+            text-align: center;
+            font-size: 5rem; /* Adjust font size for the logo */
+            font-weight: 800; /* Bold font for modern feel */
+            color: #FFFFFF; /* White logo text */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            line-height: 1.2;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Add text shadow for more depth */
+        }
+    
+        /* Optional: Icon color */
+        .carousel-logo i {
+            color: #FFFFFF; /* White icon */
+            margin-right: 10px;
+        }
+    
+        /* Responsive font size adjustments */
         @media (max-width: 768px) {
-            #header-carousel .carousel-item img {
-                height: 60vh; /* Adjust height for smaller devices */
+            .carousel-logo {
+                font-size: 3.5rem; /* Adjust logo size for tablets */
             }
         }
     
         @media (max-width: 576px) {
-            #header-carousel .carousel-item img {
-                height: 50vh; /* Further reduce height for extra small devices */
+            .carousel-logo {
+                font-size: 2.5rem; /* Reduce size for mobile */
             }
+        }
+    
+        /* Hide carousel controls */
+        .carousel-control-prev, .carousel-control-next {
+            display: none; /* Remove carousel controls */
         }
     </style>
     
@@ -95,21 +124,29 @@
                     <a href="service.html" class="nav-item nav-link">Services</a>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <i class="fa fa-search"></i>
+                </button>
             </div>
         </nav>
     
+        <!-- Carousel-like Section with Black Background and White "Welcome" Logo -->
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-2.png" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                        </div>
+                    <!-- White "Welcome" Logo Text -->
+                    <div class="carousel-logo">
+                        Welcome
                     </div>
                 </div>
+                <!-- Additional carousel items can be added if necessary -->
+            </div>
         </div>
     </div>
+    
+    
+    
+    
     
     <!-- Navbar & Carousel End -->
 
@@ -158,7 +195,7 @@
                 <!-- Image Section -->
                 <div class="col-lg-5">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
-                        <img src="img/about.png" alt="About Us" class="img-fluid rounded" style="height: auto; max-height: 100%; width: 100%;">
+                        <img src="img/about.jpg" alt="About Us" class="img-fluid rounded" style="height: auto; max-height: 100%; width: 100%;">
                     </div>
                 </div>
             </div>
