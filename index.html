@@ -324,34 +324,39 @@
     <!-- About Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
+            <div class="row g-5 align-items-center justify-content-center">
                 <!-- About Us Heading Section -->
                 <div class="col-12 mb-4">
                     <h1 class="text-primary text-center">About Us</h1>
                 </div>
-        
-                <!-- Main Text Box with Two Inner Text Boxes -->
-                <div class="col-lg-7 p-5">
+    
+                <!-- Main Text Box with Three Inner Text Boxes -->
+                <div class="col-lg-7 p-5 d-flex flex-column justify-content-center align-items-center">
                     <div class="text-box shadow-lg rounded-lg p-4 bg-light">
                         <!-- Vision Box -->
                         <div class="inner-text-box mb-4 p-5 shadow-lg rounded-lg bg-skyblue">
                             <h2 class="text-dark mb-3">Our Vision</h2>
                             <p class="fs-5 text-dark">
-                                At the core of our mission is the belief that technology can be a powerful force for change.
-                                We are committed to fostering innovation that creates lasting impact, transforming ideas into real-world solutions.
+                                Our vision is to be a global leader in providing transformative e-commerce and tech services.
                             </p>
                         </div>
                         <!-- Mission Box -->
                         <div class="inner-text-box mb-4 p-5 shadow-lg rounded-lg bg-skyblue">
                             <h2 class="text-dark mb-3">Our Mission</h2>
                             <p class="fs-5 text-dark">
-                                Our mission is to deliver cutting-edge solutions that empower businesses to scale while ensuring
-                                customer satisfaction at every step, building long-term relationships with each of our partners.
+                                Our mission is to empower businesses with innovative digital solutions.
+                            </p>
+                        </div>
+                        <!-- New Box (Values) -->
+                        <div class="inner-text-box mb-4 p-5 shadow-lg rounded-lg bg-skyblue">
+                            <h2 class="text-dark mb-3">Our Values</h2>
+                            <p class="fs-5 text-dark">
+                                Our values focus on integrity, innovation, and collaboration, driving excellence in every project.
                             </p>
                         </div>
                     </div>
                 </div>
-        
+    
                 <!-- Image Section Without Emoji -->
                 <div class="col-lg-5">
                     <div class="wow fadeIn" data-wow-delay="0.3s">
@@ -385,6 +390,10 @@
             box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-height: auto; /* Set max height */
+            overflow-y: auto; /* Allow scrolling if content exceeds height */
         }
     
         /* Inner Text Box Styling */
@@ -397,6 +406,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            height: 100%;
         }
     
         /* Sky Blue Background Color for Inner Boxes */
@@ -484,6 +494,8 @@
     
             .col-lg-7, .col-lg-5 {
                 text-align: center;
+                justify-content: center;
+                align-items: center;
             }
     
             .img-container {
@@ -511,6 +523,8 @@
     
             .col-lg-7, .col-lg-5 {
                 text-align: center;
+                justify-content: center;
+                align-items: center;
             }
     
             .img-container {
@@ -531,6 +545,7 @@
             }
         }
     
+        /* Mobile Adjustments - Set height to 10% for inner boxes */
         @media (max-width: 576px) {
             h1.text-primary {
                 font-size: 1.5rem;
@@ -554,9 +569,15 @@
     
             .inner-text-box {
                 padding: 15px;
+                height: 10%; /* Set height to 10% on mobile */
+                overflow: hidden; /* Ensure content doesn't overflow */
             }
         }
     </style>
+    
+    
+    
+    
     
     
     
