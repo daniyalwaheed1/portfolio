@@ -40,261 +40,695 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+    <div class="container-fluid bg-dark px-5 py-3 d-none d-lg-block">
         <div class="row gx-0">
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Rawalpindi dhok hafiz shah khalid colony  </small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>923184672024</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>daniyalwaheed990@gmail.com</small>
+                    <small class="me-3 text-light" style="font-size: 0.9rem;"><i class="fa fa-map-marker-alt me-2"></i>Rawalpindi Dhok Hafiz Shah Khalid Colony</small>
+                    <small class="me-3 text-light" style="font-size: 0.9rem;"><i class="fa fa-phone-alt me-2"></i>+923184672024</small>
+                    <small class="text-light" style="font-size: 0.9rem;"><i class="fa fa-envelope-open me-2"></i>daniyalwaheed990@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/daniyalwaheed.yousaf?mibextid=ZbWKwL"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/daniawan786/profilecard/?igsh=OG84ODNqaHZpdm5j"><i class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@sultandaniyal?si=oKTcO_F-NfmOKJWn"><i class="fab fa-youtube fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 social-icon" href="https://www.facebook.com/daniyalwaheed.yousaf?mibextid=ZbWKwL" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2 social-icon" href="https://www.instagram.com/daniawan786/profilecard/?igsh=OG84ODNqaHZpdm5j" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram fw-normal"></i>
+                    </a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle social-icon" href="https://youtube.com/@sultandaniyal?si=oKTcO_F-NfmOKJWn" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube fw-normal"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Add this CSS for the hover effect and smoother layout -->
+    <style>
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.1);
+        }
+        @media (max-width: 992px) {
+            .container-fluid {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .col-lg-8, .col-lg-4 {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .social-icon {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
     <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
-    <style>
-        /* CSS for carousel-like section with black background and white logo */
-        #header-carousel .carousel-item {
-            height: 100vh; /* Set height to 100% of the viewport height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000; /* Black background */
-        }
-    
-        /* Style for the white "Welcome" logo text */
-        .carousel-logo {
-            text-align: center;
-            font-size: 5rem; /* Adjust font size for the logo */
-            font-weight: 800; /* Bold font for modern feel */
-            color: #FFFFFF; /* White logo text */
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            line-height: 1.2;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Add text shadow for more depth */
-        }
-    
-        /* Optional: Icon color */
-        .carousel-logo i {
-            color: #FFFFFF; /* White icon */
-            margin-right: 10px;
-        }
-    
-        /* Responsive font size adjustments */
-        @media (max-width: 768px) {
-            .carousel-logo {
-                font-size: 3.5rem; /* Adjust logo size for tablets */
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daniyal Waheed</title>
+        <!-- Add Bootstrap CSS and FontAwesome for icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <style>
+            /* Carousel Section Styling */
+            #header-carousel .carousel-item {
+                height: 100vh; /* Set height to 100% of the viewport height */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #000; /* Black background */
+                position: relative;
             }
-        }
     
-        @media (max-width: 576px) {
-            .carousel-logo {
-                font-size: 2.5rem; /* Reduce size for mobile */
+            /* Semi-transparent overlay for added depth */
+            #header-carousel .carousel-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Overlay effect */
             }
-        }
+        
+            /* Logo Text Styling */
+            .carousel-logo {
+                position: relative;
+                text-align: center;
+                font-size: 6rem; /* Adjust font size for logo */
+                font-weight: 800; /* Bold modern font */
+                color: #FFFFFF; /* White logo text */
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                line-height: 1.2;
+                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); /* Text shadow for depth */
+                z-index: 1;
+                animation: fadeIn 1s ease-out;
+            }
     
-        /* Hide carousel controls */
-        .carousel-control-prev, .carousel-control-next {
-            display: none; /* Remove carousel controls */
-        }
-    </style>
+            /* Animation for fade-in effect */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
     
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>DANIYAL WAHEED</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-                <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">
-                    <i class="fa fa-search"></i>
+            /* CTA Button Below Logo */
+            .carousel-logo .cta-btn {
+                margin-top: 30px;
+                padding: 12px 30px;
+                background-color: #00bcd4;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                cursor: pointer;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                transition: background-color 0.3s;
+            }
+    
+            .carousel-logo .cta-btn:hover {
+                background-color: #0097a7;
+            }
+    
+            /* Navbar Styling */
+            .navbar {
+                background-color: #111; /* Dark navbar background */
+                padding: 1rem 2rem;
+                transition: background-color 0.3s;
+            }
+    
+            .navbar-brand h1 {
+                font-size: 2.2rem;
+                font-weight: 700;
+                color: #fff;
+                transition: color 0.3s;
+            }
+    
+            .navbar-nav .nav-link {
+                color: #fff;
+                font-size: 1rem;
+                padding: 0.5rem 1rem;
+                transition: color 0.3s;
+            }
+    
+            .navbar-nav .nav-link:hover {
+                color: #00bcd4; /* Hover color */
+            }
+    
+            /* Navbar on Scroll Effect */
+            .navbar.scrolled {
+                background-color: #000; /* Darker navbar when scrolled */
+            }
+    
+            /* Responsive Font Size Adjustments */
+            @media (max-width: 768px) {
+                .carousel-logo {
+                    font-size: 4rem;
+                }
+                .navbar-brand h1 {
+                    font-size: 1.8rem;
+                }
+            }
+    
+            @media (max-width: 576px) {
+                .carousel-logo {
+                    font-size: 3rem;
+                }
+                .navbar-brand h1 {
+                    font-size: 1.6rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="container-fluid position-relative p-0">
+            <!-- Navbar Section -->
+            <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" id="navbar">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>DANIYAL WAHEED</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
                 </button>
-            </div>
-        </nav>
-    
-        <!-- Carousel-like Section with Black Background and White "Welcome" Logo -->
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- White "Welcome" Logo Text -->
-                    <div class="carousel-logo">
-                        Welcome
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link ">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link active">Services</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <button type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        
+            <!-- Carousel Section with Black Background -->
+            <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- White "Welcome" Logo Text -->
+                        <div class="carousel-logo">
+                            <i class="fa fa-smile"></i> Welcome
+                            <br>
+                            <a href="service.html" class="cta-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-logo">
+                            <i class="fa fa-handshake"></i> Let's Connect
+                            <br>
+                            <a href="contact.html" class="cta-btn">Get in Touch</a>
+                        </div>
                     </div>
                 </div>
-                <!-- Additional carousel items can be added if necessary -->
             </div>
         </div>
-    </div>
+    
+        <!-- Bootstrap JS and Popper.js for dynamic components -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+        <!-- Navbar Scroll Effect -->
+        <script>
+            window.addEventListener('scroll', function() {
+                let navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
     <!-- Navbar End -->
 
 
     <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+            <div class="modal-content" style="background: rgba(9, 30, 62, 0.8);">
                 <div class="modal-header border-0">
                     <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    <!-- Search Input Group with Button -->
+                    <div class="input-group" style="max-width: 700px; width: 100%;">
+                        <!-- Search Input Field -->
+                        <input type="text" class="form-control bg-transparent border-2 border-primary p-3 shadow-sm" placeholder="Type search keyword" aria-label="Search">
+                        <!-- Search Button -->
+                        <button class="btn btn-primary px-4" style="border-radius: 0 5px 5px 0;">
+                            <i class="bi bi-search"></i> Search
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Bootstrap & FontAwesome Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <!-- Full Screen Search End -->
 
 
     <!-- Service Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
+            <!-- Enhanced Section Title -->
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Our Services</h5>
-                <h1 class="mb-0">Custom IT Solutions for Your Successful Business</h1>
+                <h5 class="fw-bold text-primary text-uppercase heading-subtitle">Our Services</h5>
+                <h1 class="mb-0 heading-main">Custom IT Solutions for Your Successful Business</h1>
+                <!-- Underline Animation -->
+                <div class="title-underline"></div>
             </div>
+    
+            <!-- Service Boxes Section -->
             <div class="row g-5">
+                <!-- Digital Marketing Service -->
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-bullhorn text-white"></i> <!-- Icon for Digital Marketing -->
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-bullhorn text-white fs-3"></i>
                         </div>
-                        <h4 class="mb-3">Digital Marketing</h4>
-                        <p class="m-0">Boost your online presence and drive targeted traffic with our expert digital marketing strategies.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h4 class="mb-3 text-dark service-title">Digital Marketing</h4>
+                        <p class="m-0 text-muted">Boost your online presence and drive targeted traffic with our expert digital marketing strategies.</p>
                     </div>
                 </div>
+                <!-- Web Development Service -->
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-laptop-code text-white"></i> <!-- Icon for Web Development -->
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-laptop-code text-white fs-3"></i>
                         </div>
-                        <h4 class="mb-3">Web Development</h4>
-                        <p class="m-0">Craft stunning, responsive websites tailored to your business needs with our development expertise.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h4 class="mb-3 text-dark service-title">Web Development</h4>
+                        <p class="m-0 text-muted">Craft stunning, responsive websites tailored to your business needs with our development expertise.</p>
                     </div>
                 </div>
+                <!-- SEO Optimization Service -->
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                        <div class="service-icon">
-                            <i class="fa fa-search text-white"></i> <!-- Icon for SEO Optimization -->
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-search text-white fs-3"></i>
                         </div>
-                        <h4 class="mb-3">SEO Optimization</h4>
-                        <p class="m-0">Enhance your website's search engine rankings and increase organic traffic with our proven SEO techniques.</p>
-                        <a class="btn btn-lg btn-primary rounded" href="">
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+                        <h4 class="mb-3 text-dark service-title">SEO Optimization</h4>
+                        <p class="m-0 text-muted">Enhance your website's search engine rankings and increase organic traffic with our proven SEO techniques.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Additional Services Section -->
+            <div class="row g-5 mt-5">
+                <!-- App Development Service -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="1.2s">
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-mobile-alt text-white fs-3"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark service-title">Mobile App Development</h4>
+                        <p class="m-0 text-muted">Develop intuitive and high-performance mobile apps to reach customers on the go.</p>
+                    </div>
+                </div>
+                <!-- AI Solutions Service -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="1.5s">
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-robot text-white fs-3"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark service-title">AI Solutions</h4>
+                        <p class="m-0 text-muted">Leverage artificial intelligence to automate processes, enhance decision-making, and drive business growth.</p>
+                    </div>
+                </div>
+                <!-- IT Consulting Service -->
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="1.8s">
+                    <div class="service-item bg-gradient rounded-xl shadow-lg d-flex flex-column align-items-center justify-content-center text-center p-4 transition-all hover:scale-105 hover:bg-primary">
+                        <div class="service-icon mb-3">
+                            <i class="fa fa-comments text-white fs-3"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark service-title">IT Consulting</h4>
+                        <p class="m-0 text-muted">Get expert advice on technology implementation and best practices for your business.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Custom Styling for More Compact Design -->
+    <style>
+        /* More Compact Heading Styles */
+        .heading-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem; /* Reduced subtitle font size */
+            letter-spacing: 1px;
+            color: #0088cc;
+            text-transform: uppercase;
+            margin-bottom: 5px; /* Reduced bottom margin */
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+    
+        .heading-main {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem; /* Reduced main heading font size */
+            font-weight: 700;
+            color: #333;
+            line-height: 1.3; /* Reduced line-height */
+            margin-bottom: 10px; /* Reduced bottom margin */
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+    
+        .heading-main:hover {
+            transform: scale(1.05);
+            color: #0056b3;
+        }
+    
+        .title-underline {
+            width: 50px; /* Shortened underline */
+            height: 4px;
+            background-color: #ff3366;
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            animation: underline 0.5s ease-in-out;
+        }
+    
+        /* Service Boxes Advanced Styles */
+        .service-item {
+            background: linear-gradient(135deg, #4e73df 0%, #1cc88a 100%);
+            transition: all 0.3s ease;
+            padding: 30px; /* Reduced padding */
+            border-radius: 20px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+    
+        .service-title {
+            font-size: 1.4rem; /* Reduced font size */
+            font-weight: bold;
+            color: #333;
+            transition: color 0.3s ease;
+            margin-top: 10px; /* Reduced margin-top */
+        }
+    
+        .service-item p {
+            color: #666;
+            font-size: 0.95rem; /* Slightly smaller font size */
+        }
+    
+        .service-item .service-icon {
+            background-color: #ff3366;
+            padding: 12px;
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+    
+        .service-item:hover .service-icon {
+            background-color: #ff6699;
+        }
+    
+        /* Custom Hover Effects */
+        .service-item:hover h4 {
+            color: #fff;
+        }
+    </style>
     <!-- Service End -->
     
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="row gx-5">
-                <!-- Footer About Section -->
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
-                        <a href="index.html" class="navbar-brand">
-                            <h1 class="m-0 text-white"><i class="fa fa-user-tie me-2"></i>Startup</h1>
-                        </a>
-                        <p class="mt-3 mb-4">
-                            A startup is a young, innovative company solving real-world problems with creative solutions. It thrives on agility, scalability, and disruption, turning ideas into impactful products or services. 
-                        </p>
-                        <form action="">
+ <!-- Footer Section -->
+<div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <!-- Footer Branding Section -->
+            <div class="col-lg-3 col-md-4 footer-branding">
+                <div class="pt-3">
+                    <a href="index.html" class="navbar-brand">
+                        <h2 class="m-0 text-white">Daniyal Waheed</h2>
+                        <p class="text-white">Innovative Solutions for a Digital World</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Contact Info Section -->
+            <div class="col-lg-3 col-md-4">
+                <div class="pt-3">
+                    <div class="section-title position-relative pb-3 mb-4">
+                        <h3 class="text-light mb-0">Contact Us</h3>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-2 footer-contact-info">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <p class="mb-0">Rawalpindi, Dhok Hafiz Shah Khalid Colony</p>
+                        </li>
+                        <li class="d-flex mb-2 footer-contact-info">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">daniyalwaheed990@gmail.com</p>
+                        </li>
+                        <li class="d-flex mb-2 footer-contact-info">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+923184672024</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Quick Links Section -->
+            <div class="col-lg-2 col-md-4">
+                <div class="pt-3">
+                    <div class="section-title position-relative pb-3 mb-4">
+                        <h3 class="text-light mb-0">Quick Links</h3>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li><a class="text-light footer-link" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a></li>
+                        <li><a class="text-light footer-link" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a></li>
+                        <li><a class="text-light footer-link" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Services</a></li>
+                        <li><a class="text-light footer-link" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Social Media & Newsletter Section -->
+            <div class="col-lg-4 col-md-12">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center h-100">
+                    <div class="section-title position-relative pb-3 mb-4">
+                        <h3 class="text-light mb-0">Follow Us</h3>
+                    </div>
+                    <div class="d-flex justify-content-center mb-4">
+                        <a class="btn btn-primary btn-square me-2 social-icon" href="https://www.facebook.com/daniyalwaheed.yousaf" title="Facebook"><i class="fab fa-facebook-f fw-normal"></i></a>
+                        <a class="btn btn-primary btn-square me-2 social-icon" href="https://www.instagram.com/daniawan786/profilecard" title="Instagram"><i class="fab fa-instagram fw-normal"></i></a>
+                        <a class="btn btn-primary btn-square social-icon" href="https://youtube.com/@sultandaniyal" title="YouTube"><i class="fab fa-youtube fw-normal"></i></a>
+                    </div>
+
+                    <!-- Newsletter Signup -->
+                    <div class="pt-3">
+                        <h5 class="text-light mb-3">Stay Updated</h5>
+                        <form action="" method="post" class="w-100">
                             <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
+                                <input type="email" class="form-control border-white p-3" placeholder="Your Email" required>
+                                <button class="btn btn-dark" type="submit">Subscribe</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!-- Footer Contact Info -->
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Get In Touch</h3>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">Rawalpindi, Dhok Hafiz Shah Khalid Colony</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">daniyalwaheed990@gmail.com</p>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">923184672024</p>
-                            </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/daniyalwaheed.yousaf?mibextid=ZbWKwL"><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://www.instagram.com/daniawan786/profilecard/?igsh=OG84ODNqaHZpdm5j"><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://youtube.com/@sultandaniyal?si=oKTcO_F-NfmOKJWn">
-                                    <i class="fab fa-youtube fw-normal"></i>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        <!-- Quick Links -->
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                                <h3 class="text-light mb-0">Quick Links</h3>
-                            </div>
-                            <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About</a>
-                                <a class="text-light mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Services</a>
-                                <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact</a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Bottom Section -->
+<div class="container-fluid text-white" style="background: linear-gradient(135deg, #2c3e50, #34495e);">
+    <div class="container">
+        <div class="row justify-content-between">
+            <!-- Left Side: Copyright & Developed By -->
+            <div class="col-lg-6 col-md-12">
+                <div class="d-flex align-items-center">
+                    <p class="mb-0 text-white">
+                        &copy; <a class="text-white border-bottom" href="https://www.daniyalwaheed.com">DANIYAL WAHEED</a>
+                        | Developed by <a class="border-bottom text-white" href="https://www.daniyalwaheed.com">Sultan Daniyal</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Terms & Privacy Links -->
+            <div class="col-lg-6 col-md-12 text-end">
+                <div class="d-flex justify-content-end">
+                    <a href="#" class="text-white ms-3">Terms</a>
+                    <a href="#" class="text-white ms-3">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid text-white" style="background: #061429;">
-        <div class="container text-center">
-            <div class="row justify-content-end">
-                <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">
-                            &copy; <a class="text-white border-bottom" href="https://www.daniyalwaheed.com">DANIYAL WAHEED</a>
-                            Developed by <a class="border-bottom" href="https://www.daniyalwaheed.com">Sultan daniyal</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+
+<!-- Custom Styling for Enhanced Footer -->
+<style>
+    /* Footer Branding */
+    .footer-branding h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .footer-branding p {
+        color: #dddddd;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Footer Links Hover Effect */
+    .footer-link {
+        font-size: 1.1rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-link:hover {
+        color: #f39c12;
+        transform: translateX(5px);
+    }
+
+    /* Footer Contact Info Hover Effect */
+    .footer-contact-info:hover p {
+        color: #f39c12;
+        transform: translateX(5px);
+    }
+
+    /* Social Icons Styles */
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        background-color: #007bff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icon:hover {
+        background-color: #f39c12;
+        transform: scale(1.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon i {
+        font-size: 1.5rem;
+    }
+
+    /* Footer Email Form */
+    .footer-about .input-group {
+        margin-top: 20px;
+        border-radius: 30px;
+    }
+
+    .footer-about input {
+        padding: 10px 15px;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .footer-about button {
+        border-radius: 0 25px 25px 0;
+        background-color: #333;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    .footer-about button:hover {
+        background-color: #f39c12;
+    }
+
+    /* Bottom Footer Styling */
+    .footer-about a {
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+    .footer-about a:hover {
+        color: #f39c12;
+    }
+
+    /* Gradient and Shadow Effect for Footer */
+    .footer-bottom {
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        padding: 20px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Media Queries for Responsive Footer */
+    @media (max-width: 991px) {
+        /* Stacked Columns on Medium Screens */
+        .footer-branding, .footer-contact-info, .footer-social-media {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact-info ul {
+            padding-left: 0;
+        }
+
+        .footer-bottom {
+            padding: 15px 0;
+        }
+    }
+
+    @media (max-width: 576px) {
+        /* More Adjustments for Mobile */
+        .footer-branding h2 {
+            font-size: 1.8rem;
+        }
+
+        .footer-branding p {
+            font-size: 0.9rem;
+        }
+
+        .footer-link {
+            font-size: 1rem;
+        }
+
+        .footer-contact-info p {
+            font-size: 0.9rem;
+        }
+    }
+</style>
     <!-- Footer End -->
 
 
